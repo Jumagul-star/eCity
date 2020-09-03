@@ -8,8 +8,12 @@ import {
   DropdownMenu,
   NavLink,
   Form,
+  Navbar,
+  NavbarToggler,
 } from "reactstrap";
-import "./Navbar.css";
+import { Link } from "react-router-dom";
+import CartBtn from './CartBtn';
+
 
 const Example = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -18,6 +22,25 @@ const Example = (props) => {
 
   return (
     <div>
+      {/* <Navbar style={{ 'backgroundColor': "#e3f2fd" }} light expand="md">
+                <Link className="nav-link" to="/">
+                    <h3 className='text-success'>ECO Friday</h3>
+                </Link>
+                <NavbarToggler onClick={toggle} />
+                <Nav className="mr-auto" navbar>
+                    <NavItem>
+                        <Link className="nav-link" to="/about-us/">About Us</Link>
+                    </NavItem>
+                    
+                    <NavItem>
+                        <Link className='nav-link' to='/contacts/'>Contacts</Link>
+                    </NavItem>
+                </Nav>
+                <CartBtn />
+                <Link className='mr-3' to='/account'>Account</Link>
+                <Link to="/auth/logout">Logout</Link>
+                
+            </Navbar>
       <Nav className="nav-bbar" pills>
         <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle nav caret className="katalog">
@@ -32,9 +55,9 @@ const Example = (props) => {
           </DropdownMenu>
         </Dropdown>
         <NavItem>
-          <NavLink className="nav-items" href="#">
-            Акции
-          </NavLink>
+          <Link className="nav-items" to='/contacts/'>
+            Контакты
+          </Link>
         </NavItem>
         <NavItem>
           <NavLink className="nav-items" href="#">
@@ -57,7 +80,7 @@ const Example = (props) => {
               <i class="fa fa-whatsapp"></i>
               +996656688787
             </div>
-      </Nav>
+      </Nav> */}
     </div>
   );
 };

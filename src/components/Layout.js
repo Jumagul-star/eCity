@@ -8,7 +8,6 @@ function Layout(props) {
     return (
         <div>
             <Header />
-            <Navbar/>
             <div className='page-wrapper bg-light'>
                 {props.children}
             </div>
