@@ -1,69 +1,100 @@
-import React from 'react'
-import { Container, Row } from 'reactstrap'
+import React from "react";
+import { Button } from "reactstrap";
+import "./Footer.css";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.PNG"
 
 function Footer() {
-    return (
-        <div className='page-footer fixed-bottom' style={{'backgroundColor': 'lightblue'}}>
-            <Container className='mt-3'>
-                <Row>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100' src='https://i.pinimg.com/564x/67/e2/93/67e2933fe2dd197c27e725d025ff0e95.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100' src='https://cdn.ecommercedns.uk/files/6/223396/4/7656604/zero-waste-gift-set.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100'  src='https://i.pinimg.com/564x/2c/c2/cc/2cc2cc73a2d4f3e3440ec92b2d590ced.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100'  src='https://i.pinimg.com/564x/a2/55/8f/a2558f949b2a388915ecfc063aa29d18.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100'  src='https://1yjob743ilegfihp83lnmdm1-wpengine.netdna-ssl.com/wp-content/uploads/2018/12/5-Easy-and-Practical-Tips-To-Create-A-Fuss-Free-Zero-Waste-Kitchen.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div className='col-lg-2 col-md-12 mb-4'>
-                        <div className='view overlay z-depth-1-half'>
-                            <img className='w-100'  src='https://i.pinimg.com/564x/e1/98/54/e198547d73cb708fc919cc749a419da7.jpg' />
-                            <a href=''>
-                                <div className='mask rgba-white-light'></div>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    
-                </Row>
-                <div className='footer-copyright text-center py-3'>
-                © 2020 Copyright: 
-                <a href="https://instagram.com/eco.friday?igshid=c4nln7pnvg0s"> eco.friday.com</a>
-                </div>
-            </Container>
+  return (
+    <div className="footer-container">
+      <section className="footer-subsription">
+        <p className="footer-subscription-heading">
+        Присоединяйтесь к нашему онлайн рынку прямо сейчас!
+        </p>
+        <p className="footer-subsciption-text">
+          Вы можете подписаться в любое время.
+        </p>
+        <div className="input-areas">
+          <form>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              className="footer-input"
+            />
+            <Button buttonStyle="btn--outline">Подписаться</Button>
+          </form>
         </div>
-    )
+      </section>
+      <div className="footer-links">
+        <div className="footer-link-wrapper">
+          <div className="footer-link-items">
+            <h2>О нас</h2>
+            <Link to="/">Отзывы</Link>
+            <Link to="/">Карьера</Link>
+            <Link to="/">Инвесторы</Link>
+            <Link to="/">Срок службы</Link>
+          </div>
+          <div className="footer-link-items">
+            <h2>Способ оплаты</h2>
+            <Link to="/">Visa</Link>
+            <Link to="/">MasterCard</Link>
+            <Link to="/">Qiwi Wallet</Link>
+            <Link to="/">Элсом</Link>
+          </div>
+        </div>
+        <div className="footer-link-wrapper">
+          <div className="footer-link-items">
+            <h2>Свяжитесь с нами</h2>
+            <Link to="/">+99650977878</Link>
+            <Link to="/">qwert@mail.ru</Link>
+          </div>
+          <div className="footer-link-items">
+            <h2>Социальные сети</h2>
+            <Link to="/">Instagram</Link>
+            <Link to="/">Facebook</Link>
+            <Link to="/">Youtube</Link>
+          </div>
+        </div>
+      </div>
+      <section className="social-media">
+        <div className="social-media-wrap">
+          <div className="footer-logo">
+            <Link to="/" className="social-logo">
+              <img className="logo-hdr" src={logo} alt="logo"></img>
+            </Link>
+          </div>
+          <small className="website-rights">E-CITY</small>
+          <div className="social-icons">
+            <Link
+              className="social-icons-link facebook"
+              to="/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i className="fa fa-facebook-f"></i>
+            </Link>
+            <Link
+              className="social-icons-link instagram"
+              to="/"
+              target="_blank"
+              aria-label="Instagramm"
+            >
+              <i className="fa fa-instagram"></i>
+            </Link>
+            <Link
+              className="social-icons-link youtube"
+              to="/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i className="fa fa-youtube"></i>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

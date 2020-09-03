@@ -1,46 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
-    Navbar,
-    NavbarToggler,
-    Nav,
-    NavItem,
-    Button,
-} from 'reactstrap';
-import { Link } from 'react-router-dom';
-import CartSvg from '../assets/icons/cart.svg'
-import CartBtn from './CartBtn';
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+  Form,
+} from "reactstrap";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.PNG";
+import "./Header.css";
 
+const Example = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggle = () => setIsOpen(!isOpen);
 
-function Header() {
-    const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div>
+      <Navbar className="header-nav" light expand="md">
+        <NavbarBrand href="/">
+          <img className="logo-hdr" src={logo} alt="logo"></img>
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink></NavLink>
+            </NavItem>
+            <Form>
+          <div className="form-grp">
+            <input type="search" name="search" className="search-inp" placeholder="Поиск..."/>
+            <button className="nav-btn">Искать</button>
+          </div>
+        </Form>
+          </Nav>
+          <Link className="links mr-3">Account</Link>
+          <Link className="links" to="/auth/logout">Logout</Link>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
+};
 
-    const toggle = () => setIsOpen(!isOpen);
-
-    return (
-        <div>
-            <Navbar style={{ 'backgroundColor': "#e3f2fd" }} light expand="md">
-                <Link className="nav-link" to="/">
-                    <h3 className='text-success'>ECO Friday</h3>
-                </Link>
-                <NavbarToggler onClick={toggle} />
-                <Nav className="mr-auto" navbar>
-                    <NavItem>
-                        <Link className="nav-link" to="/about-us/">About Us</Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link className='nav-link' to='/order/'>Order</Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link className='nav-link' to='/contacts/'>Contacts</Link>
-                    </NavItem>
-                </Nav>
-                <CartBtn />
-                <Link className='mr-3'>Account</Link>
-                <Link to="/auth/logout">Logout</Link>
-            </Navbar>
-        </div>
-    )
-}
-
-export default Header
+export default Example;

@@ -5,7 +5,7 @@ export const addItemToCart = (item)=>({
     payload: item
 })
 
-export const removeItemFromCart = (id)=>({
+export const removeItemFromCart = (slug)=>({
     type: REMOVE_ITEM_FROM_CART,
-    payload: id
+    payload: slug
 })

@@ -1,0 +1,24 @@
+.header-nav {
+  background-color: rgb(138, 131, 126);
+}
+
+.links {
+  font-family: 'Balsamiq Sans', cursive;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+.contacts {
+  color: #615960;
+  margin-left: 900px;
+}
+
+.fa-whatsapp {
+  color: rgb(29, 138, 29);
+}
+
+.logo-hdr {
+  height: 50px;
+  width: 90px;
+}

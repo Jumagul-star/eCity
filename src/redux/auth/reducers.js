@@ -5,7 +5,7 @@ import {
     REGISTER_USER,
     REGISTER_USER_SUCCESS,
     REGISTER_USER_FAILED,
-    LOGOUT_USER,
+    // LOGOUT_USER,
     CLEAR_ERROR,
 } from './constants';
 
