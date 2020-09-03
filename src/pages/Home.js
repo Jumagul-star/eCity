@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Carousel,
     CarouselItem,
@@ -11,6 +11,7 @@ import {
 import frizer from "../assets/frizer.jpg"
 import komp from "../assets/komp.jpg"
 import "./Home.css"
+import List from '../components/products/List'
 
 
 const items = [
@@ -39,6 +40,46 @@ const HomeCarousel = () => {
         if (animating) return;
         const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
         setActiveIndex(nextIndex);
+    }
+
+
+
+    function Home(props) {
+        function getData(url) {
+            fetch(url)
+                .then(function(response) {
+                    console.log(response)
+                    return response.json()
+                })
+                .then(function(data) {
+                    console.log(data)
+                    pagination(data)
+                .catch(function(err) {
+                    console.log('Err: ', err)
+                })
+                })
+        }
+        function pagination(data) {
+            const {current, previous, next} = data;
+        }
+        const {fetchData} = props;
+        useEffect(()=>{
+            fetchData();
+        }, [fetchData]);
+        
+        if(props.err){
+            return <h4 className='text-danger'>
+                {props.err.message}
+            </h4>
+        }
+        return (
+            <Container>
+                Home
+                <List data={props.data}/>
+                <Button onClick={(previous)=>getData(previous)} className="prevBtn">&larr;</Button>
+                <Button onClick={(next)=>getData(next)} className="nextBtn">&rarr;</Button>
+            </Container>
+        )
     }
 
     const previous = () => {

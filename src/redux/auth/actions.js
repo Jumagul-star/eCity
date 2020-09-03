@@ -5,11 +5,9 @@ import {
     REGISTER_USER,
     REGISTER_USER_SUCCESS,
     REGISTER_USER_FAILED,
-    LOGOUT_USER,
+    // LOGOUT_USER,
 } from './constants';
 import Axios from 'axios';
-import { useHistory } from 'react-router-dom';
-import { Alert } from 'reactstrap';
 
 // export const loginUser = (email, password) => (
 //     {

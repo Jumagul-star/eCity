@@ -15,3 +15,9 @@
     background-color: red;
     color: #FFF;
 }
+
+.myToaster{
+  position: fixed !important;
+  bottom: 30px;
+  right: 20px;
+}
