@@ -1,0 +1,53 @@
+.main-container {
+  height: 1000px;
+  background-image: url("../assets/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  z-index: -1;
+  -webkit-box-shadow: inset -1px 3px 47px -10px rgba(0, 0, 0, 1);
+  -moz-box-shadow: inset -1px 3px 47px -10px rgb(49, 9, 9);
+  box-shadow: inset -1px 3px 47px -10px rgba(0, 0, 0, 1);
+}
+.carusel {
+  /* display: flex;
+  justify-content: center; */
+}
+.custom-tag {
+  border: 1px solid white;
+  margin-top: 100px;
+  margin-left: 500px;
+  width: 1000px;
+  height: 600px;
+  background:#242424 ;
+}
+
+.prev-btn {
+  margin-top: 400px;
+  margin-left: 600px;
+}
+.next-btn {
+  margin-top: 400px;
+  margin-right: 600px;
+}
+
+.img-car{
+  height: 500px;
+  margin: 0 auto;
+  width: 1000px;;
+  background-size: cover;
+}
+.text {
+  font-size: large;
+}
+
+.HomeMainDiv{
+  height: 100px;
+}
+
+.car-icon-next{
+  margin-right: 200px;
+}
+

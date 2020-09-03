@@ -1,0 +1,44 @@
+.nav-bbar{
+  background-color: #242424;
+  font-family: 'Balsamiq Sans', cursive;
+  border: 1px solid #fff;
+}
+
+.nav-items{
+  font-size: large;
+  text-decoration: none;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+
+.katalog{
+  font-family: 'Balsamiq Sans', cursive;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+
+.search-inp{
+  height: 40px;
+  width: 700px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: wheat ;
+  border: none;
+}
+
+.form-grp{
+  margin-left: 400px;
+}
+
+.nav-btn{
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
