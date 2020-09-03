@@ -89,6 +89,9 @@ function Header() {
                     <NavItem>
                         <Link className="nav-link" to="/about-us/">О нас</Link>
                     </NavItem>
+                    <NavItem>
+                        <Link className="nav-link" to="/form/">Добавить товар</Link>
+                    </NavItem>
                     
                     <NavItem>
                         <Link className='nav-link' to='/contacts/'>Контакты</Link>

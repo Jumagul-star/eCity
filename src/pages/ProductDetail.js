@@ -11,12 +11,14 @@ function ProductDetail(props) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const url = "http://localhost:8000";
+
     const isInCart = (item, cartItems) => {
-        return !!cartItems.find((a) => a.slug === item.slug);
+        return !!cartItems.find((a) => a.id === item.id);
     }
     useEffect(() => {
         setLoading(true)
-        Axios.get(process.env.REACT_APP_API_URL + "/api/products/" + params.slug)
+        Axios.get(`${url}/posts`)
             .then(({ data }) => {
 
                 setData(data);
@@ -24,7 +26,7 @@ function ProductDetail(props) {
             .finally(() => {
                 setLoading(false)
             })
-    }, [params.slug])
+    }, [params.id])
 
 
     if (loading) return (<h1>Loading...</h1>)
@@ -32,7 +34,7 @@ function ProductDetail(props) {
 
     return (
         <div>
-            Product Detail of {params.slug}
+            Product Detail of {params.id}
             {data ? (
                 <Row>
                     <Col md={6}>
@@ -46,7 +48,7 @@ function ProductDetail(props) {
                             {isInCart(data, props.cartItems) ? (
                                 <Button 
                                 color="warning"
-                                onClick={()=>props.removeItemFromCart(data.slug)}
+                                onClick={()=>props.removeItemFromCart(data.id)}
                                 >
                                     Remove from cart
                                 </Button>
@@ -72,7 +74,7 @@ function ProductDetail(props) {
                 </Row>
             ) : (
                     <h4>
-                        Error 404: Product {params.slug} is not defined
+                        Error 404: Product {params.id} is not defined
                     </h4>
                 )}
         </div>
