@@ -1,13 +1,28 @@
 import React, { useEffect } from 'react'
 import List from '../components/products/List'
-import { Container } from 'reactstrap'
+import { Container, Button } from 'reactstrap'
 import { fetchData } from '../redux/actions'
 import { connect } from 'react-redux'
 
 
-
-
 function Home(props) {
+    function getData(url) {
+        fetch(url)
+            .then(function(response) {
+                console.log(response)
+                return response.json()
+            })
+            .then(function(data) {
+                console.log(data)
+                pagination(data)
+            .catch(function(err) {
+                console.log('Err: ', err)
+            })
+            })
+    }
+    function pagination(data) {
+        const {current, previous, next} = data;
+    }
     const {fetchData} = props;
     useEffect(()=>{
         fetchData();
@@ -22,6 +37,8 @@ function Home(props) {
         <Container>
             Home
             <List data={props.data}/>
+            <Button onClick={(previous)=>getData(previous)} className="prevBtn">&larr;</Button>
+            <Button onClick={(next)=>getData(next)} className="nextBtn">&rarr;</Button>
         </Container>
     )
 }

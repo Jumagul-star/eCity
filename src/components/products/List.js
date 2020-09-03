@@ -3,6 +3,7 @@ import { Row, Col } from 'reactstrap'
 import ListItem from './ListItem'
 
 function List(props) {
+    // console.log(props)
     return (
         <Row>
             {props.data.map((item)=>(

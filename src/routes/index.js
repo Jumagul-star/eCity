@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Layout from '../components/Layout'
-import Order from '../pages/Order'
 import Contacts from '../pages/Contacts'
+import Order from '../components/order/Order'
+import Account from '../components/Account'
 
 //? Auth
 const Login = React.lazy(() => import('../pages/auth/Login'))
@@ -72,15 +73,21 @@ function Routes() {
                         </Layout>
                     </PrivateRoute> 
 
+                    <PrivateRoute exact path='/contacts'>
+                        <Layout>
+                            <Contacts/>
+                        </Layout>
+                    </PrivateRoute>
+
                     <PrivateRoute exact path='/order'>
                         <Layout>
                             <Order/>
                         </Layout>
                     </PrivateRoute>
 
-                    <PrivateRoute>
+                    <PrivateRoute exact path='/account'>
                         <Layout>
-                            <Contacts/>
+                            <Account/>
                         </Layout>
                     </PrivateRoute>
                     
