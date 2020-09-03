@@ -12,6 +12,7 @@ const Register = React.lazy(() => import('../pages/auth/Register'))
 //? Pages
 const Home = React.lazy(() => import('../pages/Home'))
 const AboutUs = React.lazy(() => import('../pages/AboutUs'))
+const Form = React.lazy(() => import('../pages/Form'))
 
 
 //? Product Detail
@@ -72,6 +73,11 @@ function Routes() {
                             <AboutUs/>
                         </Layout>
                     </PrivateRoute> 
+                    <PrivateRoute exact path="/form">
+                        <Layout>
+                            <Form />
+                        </Layout>
+                    </PrivateRoute>
 
                     <PrivateRoute exact path='/contacts'>
                         <Layout>

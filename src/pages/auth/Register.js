@@ -27,7 +27,7 @@ function Register(props) {
     }
 
     return (
-        <div style={{backgroundColor: '#e5e5e5'}}>
+        <div style={{backgroundColor: '#d0f5dc'}}>
             <Container>
                 <Row
                     style={{height:'100vh'}}
@@ -36,15 +36,16 @@ function Register(props) {
                         <Card className="shadow">
                             <CardBody>
                                 <form onSubmit={handleSumbit}>
-                                    <h2>Register</h2>
+                                    <h2>Регистрация</h2>
+                                    <p>Легко и быстро!</p>
                                     {props?.err && props?.err?.response?.data?.message && (
                                         <h4 className='text-danger'>
-                                            Error: {props.err.response.data?.message
+                                            Ошибка: {props.err.response.data?.message
                                             }
                                         </h4>
                                     )}
                                     <Label htmlFor='email' className="mt-3">
-                                        Enter your Email:
+                                        Адрес электронной почты:
                                     </Label>
                                     
                                     <Input
@@ -54,7 +55,7 @@ function Register(props) {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                     <Label htmlFor='password' className="mt-3">
-                                        Enter your password:
+                                        Пароль:
                                     </Label>
                                     <Input
                                         id='password'
@@ -64,7 +65,7 @@ function Register(props) {
                                         patter="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
                                     />
                                     <Label htmlFor='repeat_password' className="mt-3">
-                                        Repeat your password:
+                                        Повторите пароль:
                                     </Label>
                                     <Input
                                         id='repeat_password'
@@ -74,17 +75,17 @@ function Register(props) {
                                     />
                                     <ButtonGroup className=' w-100 mt-3'>
                                         <Button style={{
-                                            'backgroundColor': '#6CB3F5',
+                                            'backgroundColor': '#1198f2',
                                             'color': 'black'
                                         }}
                                             type='submit'
-                                            >Submit
+                                            >Регистрация
                                         </Button>
-                                        <Button type='reset'>Cancel</Button>
+                                        <Button type='reset'>Отмена</Button>
                                     </ButtonGroup>
                                 </form>
-                                <p className="text-center mt-3">Already have an account? {" "}
-                                    <Link to="/auth/login">Sign In</Link>
+                                <p className="text-center mt-3">Есть аккаунт? {" "}
+                                    <Link to="/auth/login">Вход</Link>
                                 </p>
                             </CardBody>
                         </Card>

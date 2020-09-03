@@ -2,18 +2,40 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "title": "Стиральная машина Samsung",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_8_604_0.jpg",
+      "desc": "Продается стиральная машина Samsung, почти новая.",
+      "price": "100"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "title": "Стиральная машина Samsung",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_8_604_0.jpg",
+      "desc": "Продается стиральная машина Samsung, почти новая.",
+      "price": "100"
+    },
+    {
+      "id": 3,
+      "title": "Стиральная машина Samsung",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_8_604_0.jpg",
+      "desc": "Продается стиральная машина Samsung, почти новая.",
+      "price": "100"
+    },
+    {
+      "id": 4,
+      "title": "Стиральная машина Samsung",
+      "image": "https://object.pscloud.io/cms/cms/Photo/img_0_8_604_0.jpg",
+      "desc": "Продается стиральная машина Samsung, почти новая.",
+      "price": "100"
+    },
+    {
+      "id": 1599130200144,
+      "title": "werety",
+      "price": "12345",
+      "desc": "awsedfg",
+      "image": "asdfg",
+      "phone": "12345",
+      "name": "szdfg"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -17,7 +17,7 @@ const CartReducer = (state=INIT_STATE, action)=>{
         case REMOVE_ITEM_FROM_CART:
             if(true){
                 const cartItems = [...state.cartItems];
-                const index = cartItems.findIndex((item)=>item.slug === action.payload);
+                const index = cartItems.findIndex((item)=>item.id === action.payload);
                 if(index !== -1){
                     cartItems.splice(index, 1);
                     localStorage.setItem("cart", JSON.stringify(cartItems));

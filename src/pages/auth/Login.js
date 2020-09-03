@@ -10,43 +10,40 @@ function Login(props) {
     const history = useHistory();
     const handleSumbit = (e) => {
         e.preventDefault();
-        // if(email === 'demo@demo.com' && password === 'demo') {
-        //     localStorage.setItem('token', `${email}.${password}`)
-        //     history.replace('/')
-        // }
         props.loginUser({ email, password }, history);
     }
 
-    // const handleRegister = () => {
-    //     history.replace('/auth/register')
-    // }
-    const {clearError} = props;
-    useEffect(()=>{
+    const handleRegister = () => {
+        history.replace('/auth/register')
+    }
+    const { clearError } = props;
+    useEffect(() => {
         clearError()
     }, [clearError])
 
-    if(localStorage.getItem('token'))  {
+    if (localStorage.getItem('token')) {
         return <Redirect to='/' />
     }
 
     return (
-        <div style={{backgroundColor: '#e5e5e5'}}>
+        <div style={{ backgroundColor: '#d0f5dc' }}>
             <Container>
                 <Row
-                    style={{height:'100vh'}}
+                    style={{ height: '100vh' }}
                     className='justify-content-center align-items-center'>
-                    <Col md={6}>
+                    <Col md={8}>
                         <Card className="shadow">
-                            <CardBody>
-                                <form onSubmit={handleSumbit}>
-                                    <h2>Login</h2>
+                            <CardBody className="d-flex justify-content-around">
+                                <form className="col-md-6"
+                                    onSubmit={handleSumbit}>
+                                    {/* <h2>Войти</h2> */}
                                     {props?.err && props?.err?.response?.data?.message && (
                                         <h4 className='text-danger'>
-                                            Error: {props.err.response.data.message}
+                                            Ошибка: {props.err.response.data.message}
                                         </h4>
                                     )}
                                     <Label htmlFor='email' className="mt-3">
-                                        Enter your Email:
+                                        Адрес электронной почты:
                                     </Label>
                                     <Input
                                         id='email'
@@ -55,7 +52,7 @@ function Login(props) {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                     <Label htmlFor='password' className="mt-3">
-                                        Enter your password:
+                                        Пароль:
                                     </Label>
                                     <Input
                                         id='password'
@@ -63,34 +60,38 @@ function Login(props) {
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
-                                    <ButtonGroup className=' w-100 mt-3'>
+                                    <ButtonGroup className=' w-100 mt-4'>
                                         <Button style={{
-                                            'backgroundColor': '#6CB3F5',
+                                            'backgroundColor': '#1198f2',
                                             'color': 'black'
                                         }}
                                             type='submit'
-                                        >Submit
+                                        >Войти
                                     </Button>
-                                        <Button type='reset'>Cancel</Button>
+                                        <Button type='reset'>Отмена</Button>
                                     </ButtonGroup>
                                 </form>
-                                {/* <form className='col-md-6' style={{ 'backgroundColor': '#6CB3F5' }}>
-                                    <h2>Sign Up</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                    ut aliquip ex ea commodo consequat.</p>
-                                    <Link>
-                                        <Button
-                                            onClick={handleRegister}
-                                            className='mb-3 bg-light text-dark'>
-                                            Register Now
-                                    </Button>
-                                    </Link>
-                                </form> */}
-                                <p className="text-center mt-3">Don't have an account? {" "}
-                                    <Link to="/auth/register">Sign Up</Link>
-                                </p>
+                                <form className='col-md-6' style={{ 'backgroundColor': '#1198f2' }}>
+                                    <p className="text-center mt-3">
+                                        <h2>Регистрация</h2>
+                                        <p>Регистрируйся на наш сайт и продай
+                                        неиспользованную технику по хорошей цене.
+                                        Зарегистрированные пользователи
+                                        могут продавать свой товар на нашем
+                                        интернет-магазина "eCity". Типа такого грамотный текст
+                                            надо прописать вместо этого всего. </p> {" "}
+                                        <Link to="/auth/register">
+                                            <Button
+                                                onClick={handleRegister}
+                                                className='mb-3 bg-light text-dark'
+                                            >
+                                                Зарегистрироваться
+                                            </Button>
+                                        </Link>
+                                    </p>
+
+                                </form>
+
                             </CardBody>
                         </Card>
                     </Col>
@@ -115,7 +116,7 @@ const mapDispatchToProps = (dispatch) => {
             )
             )
         },
-        clearError: ()=>dispatch({
+        clearError: () => dispatch({
             type: 'CLEAR_ERROR'
         })
     }
