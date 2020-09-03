@@ -19,6 +19,21 @@
 }
 
 .logo-hdr {
-  height: 50px;
-  width: 90px;
+  height: 83px;
+  width: 100px;
+  margin-top: -16px;
+  margin-bottom: -16px;
+}
+
+.search-inp{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+.nav-btn{
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
 }
